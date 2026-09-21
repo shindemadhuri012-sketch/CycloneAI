@@ -1,0 +1,78 @@
+{
+  "model_name": "CycloneIntensityPredictor",
+  "version": "1.0.0",
+  "phase": "Phase 6 - Cyclone Intensity Prediction",
+  "trained_at": "2026-09-20T14:17:47.182087+00:00",
+  "horizons": [
+    0,
+    6,
+    12,
+    24
+  ],
+  "ri_threshold_kt": 30.0,
+  "validation_metrics": {
+    "+6h": {
+      "wind_mae": 4.2,
+      "wind_rmse": 6.92,
+      "wind_r2": 0.896,
+      "persistence_wind_mae": 3.58,
+      "wind_skill_gain_pct": -17.5,
+      "wind_90pct_interval_coverage": 84.5,
+      "pressure_mae": 2.61,
+      "pressure_rmse": 4.91,
+      "pressure_r2": 0.876,
+      "persistence_pressure_mae": 2.28
+    },
+    "+12h": {
+      "wind_mae": 6.48,
+      "wind_rmse": 9.33,
+      "wind_r2": 0.818,
+      "persistence_wind_mae": 6.81,
+      "wind_skill_gain_pct": 4.8,
+      "wind_90pct_interval_coverage": 79.7,
+      "pressure_mae": 4.22,
+      "pressure_rmse": 6.82,
+      "pressure_r2": 0.769,
+      "persistence_pressure_mae": 4.33
+    },
+    "+24h": {
+      "wind_mae": 9.59,
+      "wind_rmse": 13.75,
+      "wind_r2": 0.632,
+      "persistence_wind_mae": 11.07,
+      "wind_skill_gain_pct": 13.4,
+      "wind_90pct_interval_coverage": 78.4,
+      "pressure_mae": 5.98,
+      "pressure_rmse": 9.31,
+      "pressure_r2": 0.599,
+      "persistence_pressure_mae": 6.7
+    },
+    "rapid_intensification": {
+      "roc_auc": 0.8441,
+      "recall": 0.7284,
+      "precision": 0.1329,
+      "f1_score": 0.2248,
+      "actual_ri_events": 81
+    }
+  },
+  "features": [
+    "lat",
+    "lon",
+    "forward_speed",
+    "dist_km",
+    "dt_hours",
+    "bearing_sin",
+    "bearing_cos",
+    "coriolis_f",
+    "pressure_deficit",
+    "central_pres",
+    "month_sin",
+    "month_cos",
+    "day_of_year",
+    "is_bob",
+    "current_wind",
+    "past_dv_6h",
+    "past_dp_6h",
+    "intensity_balance_ratio"
+  ]
+}

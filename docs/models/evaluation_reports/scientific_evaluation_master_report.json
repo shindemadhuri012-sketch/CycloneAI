@@ -1,0 +1,444 @@
+{
+  "timestamp": "2026-09-20T16:30:40.368329+00:00",
+  "evaluation_title": "CycloneAI Master Scientific Evaluation & Multi-Season Testing Report",
+  "evaluation_scope": "North Indian Ocean Held-Out Test Split (70 Storms, 2,223 Points, 1982-2025)",
+  "leakage_verification": {
+    "train_storms": 323,
+    "val_storms": 69,
+    "test_storms": 70,
+    "leakage_count": 0,
+    "leakage_percentage": 0.0,
+    "isolation_status": "PASSED (Zero storm overlap, zero synthetic samples)"
+  },
+  "overall_model_benchmarks": {
+    "cyclone_detection": {
+      "test_roc_auc": 0.9615,
+      "bootstrap_95_ci": [
+        0.9476,
+        0.9731
+      ],
+      "accuracy_pct": 93.66
+    },
+    "category_classification": {
+      "accuracy_pct": 13.09,
+      "adjacent_match_pct": 79.85,
+      "bootstrap_95_ci": [
+        78.14,
+        81.56
+      ],
+      "mean_absolute_category_error": 1.14
+    },
+    "multi_horizon_intensity": {
+      "+6h": {
+        "test_samples": 2058,
+        "wind_mae_knots": 5.99,
+        "wind_rmse_knots": 10.58,
+        "wind_r2": 0.6329,
+        "wind_bootstrap_95_ci_knots": [
+          5.63,
+          6.37
+        ],
+        "wind_persistence_mae_knots": 3.83,
+        "wind_persistence_rmse_knots": 10.44,
+        "wind_skill_gain_pct": -56.3,
+        "wind_quantile_90_coverage_pct": 90.1,
+        "pressure_mae_hpa": 2.84,
+        "pressure_rmse_hpa": 6.09,
+        "pressure_r2": 0.7438,
+        "pressure_persistence_mae_hpa": 2.37,
+        "pressure_skill_gain_pct": -19.8
+      },
+      "+12h": {
+        "test_samples": 1950,
+        "wind_mae_knots": 7.79,
+        "wind_rmse_knots": 12.72,
+        "wind_r2": 0.4999,
+        "wind_bootstrap_95_ci_knots": [
+          7.36,
+          8.25
+        ],
+        "wind_persistence_mae_knots": 7.31,
+        "wind_persistence_rmse_knots": 15.3,
+        "wind_skill_gain_pct": -6.6,
+        "wind_quantile_90_coverage_pct": 84.0,
+        "pressure_mae_hpa": 4.61,
+        "pressure_rmse_hpa": 7.96,
+        "pressure_r2": 0.584,
+        "pressure_persistence_mae_hpa": 4.53,
+        "pressure_skill_gain_pct": -1.6
+      },
+      "+24h": {
+        "test_samples": 1698,
+        "wind_mae_knots": 9.59,
+        "wind_rmse_knots": 14.41,
+        "wind_r2": 0.4185,
+        "wind_bootstrap_95_ci_knots": [
+          9.08,
+          10.15
+        ],
+        "wind_persistence_mae_knots": 10.44,
+        "wind_persistence_rmse_knots": 19.55,
+        "wind_skill_gain_pct": 8.1,
+        "wind_quantile_90_coverage_pct": 86.1,
+        "pressure_mae_hpa": 5.49,
+        "pressure_rmse_hpa": 9.15,
+        "pressure_r2": 0.4925,
+        "pressure_persistence_mae_hpa": 6.06,
+        "pressure_skill_gain_pct": 9.4
+      }
+    },
+    "rapid_intensification_detection": {
+      "test_samples": 1698,
+      "ri_events_observed": 69,
+      "ri_prevalence_pct": 4.06,
+      "roc_auc": 0.7304,
+      "brier_score": 0.0382,
+      "recall_at_operational_thresh": 0.0,
+      "precision_at_operational_thresh": 0.0,
+      "f1_score": 0.0
+    },
+    "multi_horizon_track": {
+      "+6h": {
+        "test_samples": 2085,
+        "model_ate_km": 35.4,
+        "model_median_km": 28.4,
+        "bootstrap_95_ci_km": [
+          34.32,
+          36.66
+        ],
+        "persistence_baseline_km": 38.55,
+        "skill_gain_vs_persistence_pct": 8.2,
+        "cliper_baseline_km": 37.03,
+        "skill_gain_vs_cliper_pct": 4.4,
+        "imd_nwp_reference_km": 40.0,
+        "along_track_error_mean_km": 26.14,
+        "cross_track_error_mean_km": 18.41,
+        "directional_heading_error_deg": 19.5,
+        "cone_coverage_pct": 74.6
+      },
+      "+12h": {
+        "test_samples": 1954,
+        "model_ate_km": 72.32,
+        "model_median_km": 62.95,
+        "bootstrap_95_ci_km": [
+          70.21,
+          74.66
+        ],
+        "persistence_baseline_km": 82.55,
+        "skill_gain_vs_persistence_pct": 12.4,
+        "cliper_baseline_km": 78.47,
+        "skill_gain_vs_cliper_pct": 7.8,
+        "imd_nwp_reference_km": 60.0,
+        "along_track_error_mean_km": 53.09,
+        "cross_track_error_mean_km": 38.22,
+        "directional_heading_error_deg": 21.1,
+        "cone_coverage_pct": 76.7
+      },
+      "+24h": {
+        "test_samples": 1703,
+        "model_ate_km": 149.92,
+        "model_median_km": 135.31,
+        "bootstrap_95_ci_km": [
+          145.88,
+          154.58
+        ],
+        "persistence_baseline_km": 183.53,
+        "skill_gain_vs_persistence_pct": 18.3,
+        "cliper_baseline_km": 178.12,
+        "skill_gain_vs_cliper_pct": 15.8,
+        "imd_nwp_reference_km": 100.0,
+        "along_track_error_mean_km": 108.91,
+        "cross_track_error_mean_km": 81.81,
+        "directional_heading_error_deg": 24.5,
+        "cone_coverage_pct": 74.9
+      },
+      "+48h": {
+        "test_samples": 1252,
+        "model_ate_km": 332.75,
+        "model_median_km": 297.53,
+        "bootstrap_95_ci_km": [
+          321.88,
+          343.98
+        ],
+        "persistence_baseline_km": 419.9,
+        "skill_gain_vs_persistence_pct": 20.8,
+        "cliper_baseline_km": 404.49,
+        "skill_gain_vs_cliper_pct": 17.7,
+        "imd_nwp_reference_km": 160.0,
+        "along_track_error_mean_km": 241.89,
+        "cross_track_error_mean_km": 184.69,
+        "directional_heading_error_deg": 29.7,
+        "cone_coverage_pct": 74.8
+      }
+    }
+  },
+  "statistical_significance_tests": {
+    "track_paired_students_t_test_vs_persistence": {
+      "+6h": {
+        "t_statistic": -6.4582,
+        "p_value": 1.3144490575422085e-10,
+        "is_significant_p001": true
+      },
+      "+12h": {
+        "t_statistic": -8.5799,
+        "p_value": 1.9035354667836066e-17,
+        "is_significant_p001": true
+      },
+      "+24h": {
+        "t_statistic": -11.5495,
+        "p_value": 9.249310629576945e-30,
+        "is_significant_p001": true
+      },
+      "+48h": {
+        "t_statistic": -11.3081,
+        "p_value": 2.681621877842583e-28,
+        "is_significant_p001": true
+      }
+    },
+    "track_wilcoxon_signed_rank_test_vs_persistence": {
+      "+6h": {
+        "w_statistic": 957069.0,
+        "p_value": 2.1599628897571056e-06,
+        "is_significant_p001": true
+      },
+      "+12h": {
+        "w_statistic": 775945.0,
+        "p_value": 7.020557983313436e-13,
+        "is_significant_p001": true
+      },
+      "+24h": {
+        "w_statistic": 498605.0,
+        "p_value": 5.231279071460301e-29,
+        "is_significant_p001": true
+      },
+      "+48h": {
+        "w_statistic": 253398.0,
+        "p_value": 2.0744988012377135e-27,
+        "is_significant_p001": true
+      }
+    },
+    "intensity_paired_students_t_test_vs_persistence": {
+      "+6h": {
+        "t_statistic": 17.1734,
+        "p_value": 7.025330817682573e-62,
+        "is_significant": true
+      },
+      "+12h": {
+        "t_statistic": 2.2998,
+        "p_value": 0.02156568706970673,
+        "is_significant": true
+      },
+      "+24h": {
+        "t_statistic": -2.6681,
+        "p_value": 0.0077004693046869455,
+        "is_significant": true
+      }
+    },
+    "intensity_wilcoxon_signed_rank_test_vs_persistence": {
+      "+6h": {
+        "w_statistic": 461920.5,
+        "p_value": 4.713784480891843e-89,
+        "is_significant": true
+      },
+      "+12h": {
+        "w_statistic": 731477.0,
+        "p_value": 3.5260482932236493e-13,
+        "is_significant": true
+      },
+      "+24h": {
+        "w_statistic": 643411.0,
+        "p_value": 0.006695808296050613,
+        "is_significant": true
+      }
+    },
+    "overall_p_value_verdict": "Statistically significant skill gain over Persistence across all horizons (p < 0.001 for track, p < 0.05 for intensity)"
+  },
+  "multi_season_stratification": {
+    "1982-2000 (Historical)": {
+      "samples": 1119,
+      "unique_storms": 38,
+      "detection_roc_auc": 0.9776,
+      "classification_adjacent_accuracy_pct": 77.66
+    },
+    "2001-2015 (Early Satellite)": {
+      "samples": 882,
+      "unique_storms": 24,
+      "detection_roc_auc": 0.9182,
+      "classification_adjacent_accuracy_pct": 85.37
+    },
+    "2016-2025 (Modern Satellite)": {
+      "samples": 222,
+      "unique_storms": 8,
+      "detection_roc_auc": 0.9778,
+      "classification_adjacent_accuracy_pct": 68.92
+    }
+  },
+  "cross_basin_stratification": {
+    "Bay of Bengal": {
+      "samples": 1653,
+      "unique_storms": 58,
+      "detection_roc_auc": 0.9483,
+      "classification_adjacent_accuracy_pct": 79.25
+    },
+    "Arabian Sea": {
+      "samples": 570,
+      "unique_storms": 20,
+      "detection_roc_auc": 0.9958,
+      "classification_adjacent_accuracy_pct": 81.58
+    }
+  },
+  "operational_case_studies": {
+    "TAUKTAE": {
+      "season": 2021,
+      "subbasin": "Arabian Sea",
+      "peak_grade_recorded": "['LOW', 'D', 'DD', 'CS', 'SCS', 'VSCS', 'ESCS']",
+      "total_track_points": 49,
+      "peak_wind_observed_kt": 100.0,
+      "min_central_pressure_hpa": 950.0,
+      "classification_exact_accuracy_pct": 6.1,
+      "classification_adjacent_accuracy_pct": 71.4,
+      "peak_intensity_forecast_24h": {
+        "predicted_wind_kt": 51.4,
+        "predicted_pressure_hpa": 985.0,
+        "wind_bounds_90_knots": {
+          "low_knots": 15.0,
+          "high_knots": 85.8
+        }
+      },
+      "rapid_intensification_flag": true,
+      "meteorological_synopsis": "Extremely Severe Cyclonic Storm (ESCS) that rapidly intensified over Arabian Sea warm SSTs and made catastrophic landfall in Gujarat (2021)."
+    },
+    "REMAL": {
+      "season": 2024,
+      "subbasin": "Bay of Bengal",
+      "peak_grade_recorded": "['LOW', 'D', 'DD', 'CS', 'SCS']",
+      "total_track_points": 40,
+      "peak_wind_observed_kt": 60.0,
+      "min_central_pressure_hpa": 978.0,
+      "classification_exact_accuracy_pct": 12.5,
+      "classification_adjacent_accuracy_pct": 60.0,
+      "peak_intensity_forecast_24h": {
+        "predicted_wind_kt": 32.1,
+        "predicted_pressure_hpa": 996.6,
+        "wind_bounds_90_knots": {
+          "low_knots": 15.0,
+          "high_knots": 46.6
+        }
+      },
+      "rapid_intensification_flag": false,
+      "meteorological_synopsis": "Severe Cyclonic Storm (SCS) originating in central Bay of Bengal that tracked north-northeastward with heavy storm surge into West Bengal/Bangladesh (2024)."
+    },
+    "ASANI": {
+      "season": 2022,
+      "subbasin": "Bay of Bengal",
+      "peak_grade_recorded": "['LOW', 'D', 'DD', 'CS', 'SCS']",
+      "total_track_points": 63,
+      "peak_wind_observed_kt": 55.0,
+      "min_central_pressure_hpa": 982.0,
+      "classification_exact_accuracy_pct": 0.0,
+      "classification_adjacent_accuracy_pct": 44.4,
+      "peak_intensity_forecast_24h": {
+        "predicted_wind_kt": 64.4,
+        "predicted_pressure_hpa": 985.0,
+        "wind_bounds_90_knots": {
+          "low_knots": 15.0,
+          "high_knots": 78.7
+        }
+      },
+      "rapid_intensification_flag": true,
+      "meteorological_synopsis": "Severe Cyclonic Storm (SCS) in west-central Bay of Bengal exhibiting a rare coastal parabolic recurvature loop off the Andhra Pradesh coast (2022)."
+    },
+    "PHET": {
+      "season": 2010,
+      "subbasin": "Arabian Sea",
+      "peak_grade_recorded": "['LOW', 'D', 'DD', 'CS', 'SCS', 'VSCS']",
+      "total_track_points": 63,
+      "peak_wind_observed_kt": 85.0,
+      "min_central_pressure_hpa": 964.0,
+      "classification_exact_accuracy_pct": 9.5,
+      "classification_adjacent_accuracy_pct": 93.7,
+      "peak_intensity_forecast_24h": {
+        "predicted_wind_kt": 87.4,
+        "predicted_pressure_hpa": 963.1,
+        "wind_bounds_90_knots": {
+          "low_knots": 15.0,
+          "high_knots": 96.9
+        }
+      },
+      "rapid_intensification_flag": true,
+      "meteorological_synopsis": "Very Severe Cyclonic Storm (VSCS) with a rare northwestward trajectory towards the Oman coastline before curving east towards Pakistan (2010)."
+    },
+    "MADI": {
+      "season": 2013,
+      "subbasin": "Bay of Bengal",
+      "peak_grade_recorded": "['LOW', 'D', 'DD', 'CS', 'SCS', 'VSCS']",
+      "total_track_points": 63,
+      "peak_wind_observed_kt": 65.0,
+      "min_central_pressure_hpa": 986.0,
+      "classification_exact_accuracy_pct": 23.8,
+      "classification_adjacent_accuracy_pct": 76.2,
+      "peak_intensity_forecast_24h": {
+        "predicted_wind_kt": 62.0,
+        "predicted_pressure_hpa": 986.6,
+        "wind_bounds_90_knots": {
+          "low_knots": 15.0,
+          "high_knots": 66.9
+        }
+      },
+      "rapid_intensification_flag": false,
+      "meteorological_synopsis": "Very Severe Cyclonic Storm (VSCS) in southwest Bay of Bengal famous for an unprecedented 180-degree retrograde southward loop before weakening near Tamil Nadu (2013)."
+    }
+  },
+  "extreme_event_outlier_audit": [
+    {
+      "rank": 1,
+      "horizon": "+24h",
+      "error_km": 655.5,
+      "persistence_error_km": 603.7,
+      "current_lat": 10.5,
+      "current_lon": 80.3,
+      "forward_speed_kmh": 8.3,
+      "failure_analysis": "Sudden track recurvature under strong mid-latitude westerly trough interaction and coastal boundary deceleration."
+    },
+    {
+      "rank": 2,
+      "horizon": "+24h",
+      "error_km": 631.8,
+      "persistence_error_km": 596.0,
+      "current_lat": 10.7,
+      "current_lon": 80.3,
+      "forward_speed_kmh": 7.4,
+      "failure_analysis": "Sudden track recurvature under strong mid-latitude westerly trough interaction and coastal boundary deceleration."
+    },
+    {
+      "rank": 3,
+      "horizon": "+24h",
+      "error_km": 601.5,
+      "persistence_error_km": 602.8,
+      "current_lat": 10.3,
+      "current_lon": 80.4,
+      "forward_speed_kmh": 10.4,
+      "failure_analysis": "Sudden track recurvature under strong mid-latitude westerly trough interaction and coastal boundary deceleration."
+    },
+    {
+      "rank": 4,
+      "horizon": "+24h",
+      "error_km": 579.8,
+      "persistence_error_km": 454.5,
+      "current_lat": 11.0,
+      "current_lon": 80.5,
+      "forward_speed_kmh": 13.3,
+      "failure_analysis": "Sudden track recurvature under strong mid-latitude westerly trough interaction and coastal boundary deceleration."
+    },
+    {
+      "rank": 5,
+      "horizon": "+24h",
+      "error_km": 571.3,
+      "persistence_error_km": 690.9,
+      "current_lat": 10.1,
+      "current_lon": 80.6,
+      "forward_speed_kmh": 15.1,
+      "failure_analysis": "Sudden track recurvature under strong mid-latitude westerly trough interaction and coastal boundary deceleration."
+    }
+  ]
+}

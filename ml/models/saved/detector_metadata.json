@@ -1,0 +1,108 @@
+{
+  "model_name": "CycloneDetector",
+  "version": "1.0.0",
+  "phase": "Phase 4 - Cyclone Identification",
+  "trained_at": "2026-09-20T13:44:01.865697+00:00",
+  "training_samples": 10557,
+  "training_unique_storms": 323,
+  "validation_samples": 2321,
+  "validation_unique_storms": 69,
+  "features": [
+    "lat",
+    "lon",
+    "forward_speed",
+    "dist_km",
+    "dt_hours",
+    "bearing_sin",
+    "bearing_cos",
+    "coriolis_f",
+    "pressure_deficit",
+    "central_pres",
+    "month_sin",
+    "month_cos",
+    "day_of_year",
+    "is_bob"
+  ],
+  "hyperparameters": {
+    "n_estimators": 150,
+    "max_depth": 5,
+    "learning_rate": 0.08,
+    "subsample": 0.85,
+    "random_state": 42,
+    "operational_threshold": 0.35,
+    "standard_threshold": 0.5
+  },
+  "validation_metrics": {
+    "split": "Validation",
+    "sample_count": 2321,
+    "cyclone_positive_rate": 0.2856527358897027,
+    "roc_auc": 0.9493683898352884,
+    "brier_score": 0.06806121406848199,
+    "standard_threshold": {
+      "threshold": 0.5,
+      "accuracy": 0.910383455407152,
+      "precision": 0.8862478777589134,
+      "recall": 0.7873303167420814,
+      "f1_score": 0.8338658146964856,
+      "confusion_matrix": [
+        [
+          1591,
+          67
+        ],
+        [
+          141,
+          522
+        ]
+      ]
+    },
+    "operational_threshold": {
+      "threshold": 0.35,
+      "accuracy": 0.9133993968117191,
+      "precision": 0.8427299703264095,
+      "recall": 0.8567119155354449,
+      "f1_score": 0.8496634255796559,
+      "confusion_matrix": [
+        [
+          1552,
+          106
+        ],
+        [
+          95,
+          568
+        ]
+      ]
+    },
+    "feature_importances": {
+      "lat": 0.10013739979909723,
+      "lon": 0.06862813838502782,
+      "forward_speed": 0.010276765226974413,
+      "dist_km": 0.009587644982724124,
+      "dt_hours": 0.000754287137771114,
+      "bearing_sin": 0.01954443953301566,
+      "bearing_cos": 0.011483050757234253,
+      "coriolis_f": 0.09549721196305759,
+      "pressure_deficit": 0.2722425570542137,
+      "central_pres": 0.24159976279084708,
+      "month_sin": 0.003932726799894461,
+      "month_cos": 0.007044819765276007,
+      "day_of_year": 0.1584362015314992,
+      "is_bob": 0.000834994273367319
+    }
+  },
+  "feature_importances": {
+    "lat": 0.10013739979909723,
+    "lon": 0.06862813838502782,
+    "forward_speed": 0.010276765226974413,
+    "dist_km": 0.009587644982724124,
+    "dt_hours": 0.000754287137771114,
+    "bearing_sin": 0.01954443953301566,
+    "bearing_cos": 0.011483050757234253,
+    "coriolis_f": 0.09549721196305759,
+    "pressure_deficit": 0.2722425570542137,
+    "central_pres": 0.24159976279084708,
+    "month_sin": 0.003932726799894461,
+    "month_cos": 0.007044819765276007,
+    "day_of_year": 0.1584362015314992,
+    "is_bob": 0.000834994273367319
+  }
+}

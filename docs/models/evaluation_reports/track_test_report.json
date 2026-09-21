@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-09-20T14:43:34.741114+00:00",
+  "model": "CycloneTrackPredictor v1.0.0",
+  "split": "Unseen Test Split (70 storms)",
+  "sample_count": 2223,
+  "unique_storms": 70,
+  "leakage_count": 0,
+  "multi_horizon_track_benchmarks": {
+    "+6h": {
+      "lead_hours": 6,
+      "sample_count": 2085,
+      "average_track_error_km": 35.39,
+      "median_track_error_km": 28.39,
+      "rmse_track_error_km": 44.68,
+      "along_track_error_mean_km": -11.51,
+      "along_track_error_std_km": 35.62,
+      "cross_track_error_mean_km": -0.89,
+      "cross_track_error_std_km": 24.37,
+      "heading_error_mean_deg": 19.47,
+      "persistence_ate_km": 38.61,
+      "skill_gain_vs_persistence_pct": 8.3,
+      "cliper_ate_km": 39.76,
+      "skill_gain_vs_cliper_pct": 11.0,
+      "calibrated_cone_radius_km": 44.5,
+      "cone_containment_rate_pct": 74.5,
+      "subbasin_breakdown": {
+        "bay_of_bengal_ate_km": 35.44,
+        "arabian_sea_ate_km": 35.24
+      },
+      "intensity_breakdown": {
+        "weak_systems_ate_km": 36.0,
+        "severe_cyclones_ate_km": 32.89
+      }
+    },
+    "+12h": {
+      "lead_hours": 12,
+      "sample_count": 1954,
+      "average_track_error_km": 72.33,
+      "median_track_error_km": 63.02,
+      "rmse_track_error_km": 87.29,
+      "along_track_error_mean_km": -24.32,
+      "along_track_error_std_km": 67.58,
+      "cross_track_error_mean_km": -0.16,
+      "cross_track_error_std_km": 49.6,
+      "heading_error_mean_deg": 21.15,
+      "persistence_ate_km": 80.14,
+      "skill_gain_vs_persistence_pct": 9.7,
+      "cliper_ate_km": 89.33,
+      "skill_gain_vs_cliper_pct": 19.0,
+      "calibrated_cone_radius_km": 96.4,
+      "cone_containment_rate_pct": 76.6,
+      "subbasin_breakdown": {
+        "bay_of_bengal_ate_km": 71.54,
+        "arabian_sea_ate_km": 74.66
+      },
+      "intensity_breakdown": {
+        "weak_systems_ate_km": 73.82,
+        "severe_cyclones_ate_km": 66.65
+      }
+    },
+    "+24h": {
+      "lead_hours": 24,
+      "sample_count": 1703,
+      "average_track_error_km": 149.93,
+      "median_track_error_km": 135.06,
+      "rmse_track_error_km": 177.57,
+      "along_track_error_mean_km": -59.23,
+      "along_track_error_std_km": 130.5,
+      "cross_track_error_mean_km": 2.44,
+      "cross_track_error_std_km": 104.82,
+      "heading_error_mean_deg": 24.52,
+      "persistence_ate_km": 176.55,
+      "skill_gain_vs_persistence_pct": 15.1,
+      "cliper_ate_km": 221.16,
+      "skill_gain_vs_cliper_pct": 32.2,
+      "calibrated_cone_radius_km": 203.0,
+      "cone_containment_rate_pct": 74.8,
+      "subbasin_breakdown": {
+        "bay_of_bengal_ate_km": 145.88,
+        "arabian_sea_ate_km": 162.45
+      },
+      "intensity_breakdown": {
+        "weak_systems_ate_km": 149.49,
+        "severe_cyclones_ate_km": 151.49
+      }
+    },
+    "+48h": {
+      "lead_hours": 48,
+      "sample_count": 1252,
+      "average_track_error_km": 332.74,
+      "median_track_error_km": 297.05,
+      "rmse_track_error_km": 390.6,
+      "along_track_error_mean_km": -152.06,
+      "along_track_error_std_km": 274.06,
+      "cross_track_error_mean_km": 36.69,
+      "cross_track_error_std_km": 230.2,
+      "heading_error_mean_deg": 29.73,
+      "persistence_ate_km": 402.53,
+      "skill_gain_vs_persistence_pct": 17.3,
+      "cliper_ate_km": 530.45,
+      "skill_gain_vs_cliper_pct": 37.3,
+      "calibrated_cone_radius_km": 437.2,
+      "cone_containment_rate_pct": 74.8,
+      "subbasin_breakdown": {
+        "bay_of_bengal_ate_km": 321.17,
+        "arabian_sea_ate_km": 370.28
+      },
+      "intensity_breakdown": {
+        "weak_systems_ate_km": 318.82,
+        "severe_cyclones_ate_km": 381.3
+      }
+    }
+  },
+  "physical_consistency_summary": {
+    "max_physical_speed_clamped_kmh": 45.0,
+    "max_turning_angle_deg_6h": 90.0,
+    "domain_bounding_lat": [
+      0.0,
+      35.0
+    ],
+    "domain_bounding_lon": [
+      45.0,
+      105.0
+    ],
+    "unphysical_outliers_count": 0
+  }
+}

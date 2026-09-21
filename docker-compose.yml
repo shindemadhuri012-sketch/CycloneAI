@@ -1,0 +1,31 @@
+services:
+  cycloneai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cycloneai-production
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - HOST=0.0.0.0
+      - PORT=8000
+      - SERVE_STATIC_SPA=True
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    volumes:
+      - ./data/processed:/app/data/processed:ro
+      - ./ml/models/saved:/app/ml/models/saved:ro
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1536M
+        reservations:
+          cpus: "0.5"
+          memory: 512M

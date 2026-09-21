@@ -1,0 +1,57 @@
+{
+  "model_version": "1.0.0",
+  "random_state": 42,
+  "horizons": [
+    6,
+    12,
+    24,
+    48
+  ],
+  "training_samples_per_horizon": {
+    "+6h": 9921,
+    "+12h": 9310,
+    "+24h": 8138,
+    "+48h": 6131
+  },
+  "validation_samples_per_horizon": {
+    "+6h": 2183,
+    "+12h": 2046,
+    "+24h": 1781,
+    "+48h": 1313
+  },
+  "validation_ate_km": {
+    "+6h_ate_km": 35.65,
+    "+12h_ate_km": 73.52,
+    "+24h_ate_km": 153.77,
+    "+48h_ate_km": 333.37
+  },
+  "calibrated_cone_radii_km": {
+    "6": 44.5,
+    "12": 96.4,
+    "24": 203.0,
+    "48": 437.2
+  },
+  "feature_names": [
+    "lat",
+    "lon",
+    "forward_speed",
+    "dist_km",
+    "dt_hours",
+    "bearing_sin",
+    "bearing_cos",
+    "coriolis_f",
+    "pressure_deficit",
+    "central_pres",
+    "month_sin",
+    "month_cos",
+    "day_of_year",
+    "is_bob",
+    "past_dlat_6h",
+    "past_dlon_6h",
+    "past_dlat_12h",
+    "past_dlon_12h",
+    "current_wind",
+    "u_motion",
+    "v_motion"
+  ]
+}

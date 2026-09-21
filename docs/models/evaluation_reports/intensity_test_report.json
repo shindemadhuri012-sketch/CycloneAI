@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-09-20T14:20:08.020799+00:00",
+  "model": "CycloneIntensityPredictor v1.0.0",
+  "split": "Unseen Test Split (70 storms)",
+  "sample_count": 2223,
+  "unique_storms": 70,
+  "leakage_count": 0,
+  "multi_horizon_benchmarks": {
+    "+6h": {
+      "lead_hours": 6,
+      "sample_count": 2058,
+      "wind_speed": {
+        "mae_knots": 5.99,
+        "rmse_knots": 10.58,
+        "r2_score": 0.633,
+        "persistence_mae_knots": 3.83,
+        "skill_gain_over_persistence_pct": -56.3,
+        "uncertainty_90pct_coverage": 86.2
+      },
+      "central_pressure": {
+        "mae_hpa": 2.84,
+        "rmse_hpa": 6.09,
+        "r2_score": 0.744,
+        "persistence_mae_hpa": 2.37,
+        "skill_gain_over_persistence_pct": -19.8,
+        "uncertainty_90pct_coverage": 79.1
+      }
+    },
+    "+12h": {
+      "lead_hours": 12,
+      "sample_count": 1950,
+      "wind_speed": {
+        "mae_knots": 7.79,
+        "rmse_knots": 12.72,
+        "r2_score": 0.5,
+        "persistence_mae_knots": 7.31,
+        "skill_gain_over_persistence_pct": -6.6,
+        "uncertainty_90pct_coverage": 81.8
+      },
+      "central_pressure": {
+        "mae_hpa": 4.61,
+        "rmse_hpa": 7.96,
+        "r2_score": 0.584,
+        "persistence_mae_hpa": 4.53,
+        "skill_gain_over_persistence_pct": -1.6,
+        "uncertainty_90pct_coverage": 76.1
+      }
+    },
+    "+24h": {
+      "lead_hours": 24,
+      "sample_count": 1698,
+      "wind_speed": {
+        "mae_knots": 9.59,
+        "rmse_knots": 14.41,
+        "r2_score": 0.418,
+        "persistence_mae_knots": 10.44,
+        "skill_gain_over_persistence_pct": 8.1,
+        "uncertainty_90pct_coverage": 84.4
+      },
+      "central_pressure": {
+        "mae_hpa": 5.49,
+        "rmse_hpa": 9.15,
+        "r2_score": 0.493,
+        "persistence_mae_hpa": 6.06,
+        "skill_gain_over_persistence_pct": 9.4,
+        "uncertainty_90pct_coverage": 74.5
+      }
+    }
+  },
+  "rapid_intensification": {
+    "roc_auc": 0.7304,
+    "recall": 0.4783,
+    "precision": 0.1104,
+    "f1_score": 0.1793,
+    "confusion_matrix": [
+      [
+        1363,
+        266
+      ],
+      [
+        36,
+        33
+      ]
+    ],
+    "actual_ri_events": 69
+  },
+  "hydrodynamic_coupling_correlation": 0.8294
+}

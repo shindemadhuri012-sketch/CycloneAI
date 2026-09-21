@@ -1,0 +1,304 @@
+{
+  "model_name": "CycloneClassifier",
+  "version": "1.0.0",
+  "phase": "Phase 5 - Cyclone Classification",
+  "trained_at": "2026-09-20T13:55:39.148601+00:00",
+  "training_samples": 10557,
+  "training_unique_storms": 323,
+  "validation_samples": 2321,
+  "validation_unique_storms": 69,
+  "categories": [
+    {
+      "index": 0,
+      "code": "LOW",
+      "name": "Low Pressure Area",
+      "wind_kt": "< 17",
+      "wind_kmh": "< 31",
+      "damage_potential": "Minimal. Scattered cloudiness and localized rainfall."
+    },
+    {
+      "index": 1,
+      "code": "D",
+      "name": "Depression",
+      "wind_kt": "17 - 27",
+      "wind_kmh": "31 - 49",
+      "damage_potential": "Minor. Rough seas, squally winds, localized coastal inundation."
+    },
+    {
+      "index": 2,
+      "code": "DD",
+      "name": "Deep Depression",
+      "wind_kt": "28 - 33",
+      "wind_kmh": "50 - 61",
+      "damage_potential": "Moderate. Heavy rain, high seas; fishermen advised not to venture into sea."
+    },
+    {
+      "index": 3,
+      "code": "CS",
+      "name": "Cyclonic Storm",
+      "wind_kt": "34 - 47",
+      "wind_kmh": "62 - 88",
+      "damage_potential": "Moderate to High. Gale-force winds; damage to thatched huts, breaking of tree branches."
+    },
+    {
+      "index": 4,
+      "code": "SCS",
+      "name": "Severe Cyclonic Storm",
+      "wind_kt": "48 - 63",
+      "wind_kmh": "89 - 117",
+      "damage_potential": "High. Uprooting of large trees, extensive damage to kutcha houses, storm surge 1.0 - 1.5m."
+    },
+    {
+      "index": 5,
+      "code": "VSCS",
+      "name": "Very Severe Cyclonic Storm",
+      "wind_kt": "64 - 89",
+      "wind_kmh": "118 - 165",
+      "damage_potential": "Very High. Extensive damage to structures, power/communication disruption, storm surge 2.0 - 2.5m."
+    },
+    {
+      "index": 6,
+      "code": "ESCS",
+      "name": "Extremely Severe Cyclonic Storm",
+      "wind_kt": "90 - 119",
+      "wind_kmh": "166 - 220",
+      "damage_potential": "Devastating. Catastrophic damage, widespread building destruction, storm surge > 3.0m."
+    },
+    {
+      "index": 7,
+      "code": "SuCS",
+      "name": "Super Cyclonic Storm",
+      "wind_kt": ">= 120",
+      "wind_kmh": ">= 221",
+      "damage_potential": "Total Catastrophe. Complete annihilation of infrastructure, extreme storm surge > 5.0m."
+    }
+  ],
+  "features": [
+    "lat",
+    "lon",
+    "forward_speed",
+    "dist_km",
+    "dt_hours",
+    "bearing_sin",
+    "bearing_cos",
+    "coriolis_f",
+    "pressure_deficit",
+    "central_pres",
+    "month_sin",
+    "month_cos",
+    "day_of_year",
+    "is_bob"
+  ],
+  "hyperparameters": {
+    "n_estimators": 160,
+    "max_depth": 12,
+    "min_samples_split": 4,
+    "random_state": 42
+  },
+  "validation_metrics": {
+    "split": "Validation",
+    "sample_count": 2321,
+    "top1_exact_accuracy": 0.6872,
+    "adjacent_accuracy": 0.9328,
+    "top2_accuracy": 0.8854,
+    "mean_absolute_category_error": 0.4041,
+    "macro_avg": {
+      "precision": 0.6654,
+      "recall": 0.623,
+      "f1_score": 0.6326
+    },
+    "weighted_avg": {
+      "precision": 0.6749,
+      "recall": 0.6872,
+      "f1_score": 0.676
+    },
+    "per_class": [
+      {
+        "index": 0,
+        "code": "LOW",
+        "name": "Low Pressure Area",
+        "precision": 0.8582,
+        "recall": 0.9158,
+        "f1_score": 0.886,
+        "support": 641
+      },
+      {
+        "index": 1,
+        "code": "D",
+        "name": "Depression",
+        "precision": 0.675,
+        "recall": 0.7726,
+        "f1_score": 0.7205,
+        "support": 664
+      },
+      {
+        "index": 2,
+        "code": "DD",
+        "name": "Deep Depression",
+        "precision": 0.4805,
+        "recall": 0.3455,
+        "f1_score": 0.402,
+        "support": 356
+      },
+      {
+        "index": 3,
+        "code": "CS",
+        "name": "Cyclonic Storm",
+        "precision": 0.5936,
+        "recall": 0.5076,
+        "f1_score": 0.5472,
+        "support": 331
+      },
+      {
+        "index": 4,
+        "code": "SCS",
+        "name": "Severe Cyclonic Storm",
+        "precision": 0.4759,
+        "recall": 0.5897,
+        "f1_score": 0.5267,
+        "support": 117
+      },
+      {
+        "index": 5,
+        "code": "VSCS",
+        "name": "Very Severe Cyclonic Storm",
+        "precision": 0.6899,
+        "recall": 0.7365,
+        "f1_score": 0.7124,
+        "support": 148
+      },
+      {
+        "index": 6,
+        "code": "ESCS",
+        "name": "Extremely Severe Cyclonic Storm",
+        "precision": 0.55,
+        "recall": 0.234,
+        "f1_score": 0.3284,
+        "support": 47
+      },
+      {
+        "index": 7,
+        "code": "SuCS",
+        "name": "Super Cyclonic Storm",
+        "precision": 1.0,
+        "recall": 0.8824,
+        "f1_score": 0.9375,
+        "support": 17
+      }
+    ],
+    "confusion_matrix": [
+      [
+        587,
+        41,
+        7,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        44,
+        513,
+        84,
+        21,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        29,
+        143,
+        123,
+        61,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        59,
+        41,
+        168,
+        51,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        3,
+        1,
+        27,
+        69,
+        12,
+        0,
+        0
+      ],
+      [
+        7,
+        1,
+        0,
+        0,
+        22,
+        109,
+        9,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        35,
+        11,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        15
+      ]
+    ],
+    "feature_importances": {
+      "lat": 0.05484187715570379,
+      "lon": 0.06109691719364887,
+      "forward_speed": 0.0214143449392657,
+      "dist_km": 0.021814032071945665,
+      "dt_hours": 0.0024448705190581606,
+      "bearing_sin": 0.03253281322064608,
+      "bearing_cos": 0.030277126872391955,
+      "coriolis_f": 0.051243748157626716,
+      "pressure_deficit": 0.2755158390006205,
+      "central_pres": 0.3041037398128547,
+      "month_sin": 0.02682832875804491,
+      "month_cos": 0.026692447712730924,
+      "day_of_year": 0.08205292466294854,
+      "is_bob": 0.009140989922513588
+    }
+  },
+  "feature_importances": {
+    "lat": 0.05484187715570379,
+    "lon": 0.06109691719364887,
+    "forward_speed": 0.0214143449392657,
+    "dist_km": 0.021814032071945665,
+    "dt_hours": 0.0024448705190581606,
+    "bearing_sin": 0.03253281322064608,
+    "bearing_cos": 0.030277126872391955,
+    "coriolis_f": 0.051243748157626716,
+    "pressure_deficit": 0.2755158390006205,
+    "central_pres": 0.3041037398128547,
+    "month_sin": 0.02682832875804491,
+    "month_cos": 0.026692447712730924,
+    "day_of_year": 0.08205292466294854,
+    "is_bob": 0.009140989922513588
+  }
+}

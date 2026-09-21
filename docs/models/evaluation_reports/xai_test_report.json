@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-09-20T15:20:45.783167+00:00",
+  "model": "CycloneAI Explainable AI Engine v1.0.0",
+  "split": "Unseen Test Split (70 storms)",
+  "sample_count": 2223,
+  "unique_storms": 70,
+  "leakage_count": 0,
+  "axiomatic_verification": {
+    "efficiency_axiom_max_error": 0.0,
+    "efficiency_axiom_mean_error": 0.0,
+    "efficiency_satisfied": true
+  },
+  "faithfulness_evaluation": {
+    "baseline_accuracy_pct": 64.37,
+    "top3_perturbed_features": [
+      "central_pres",
+      "pressure_deficit",
+      "day_of_year"
+    ],
+    "top3_perturbed_accuracy_pct": 32.93,
+    "top3_accuracy_drop_pct": 48.85,
+    "bottom3_perturbed_features": [
+      "forward_speed",
+      "is_bob",
+      "dt_hours"
+    ],
+    "bottom3_perturbed_accuracy_pct": 64.28,
+    "bottom3_accuracy_drop_pct": 0.14,
+    "faithfulness_ratio": 348.93,
+    "is_faithful": true
+  },
+  "physical_consistency": {
+    "pressure_deficit_monotonicity_verified": true,
+    "dvorak_axisymmetry_range": [
+      0.0,
+      1.0
+    ],
+    "dvorak_eye_contrast_celsius": 67.0,
+    "physical_outliers_detected": 0
+  },
+  "dvorak_bd_distribution_validation": [
+    {
+      "code": "EYE",
+      "label": "Warm Eye / Clear Pocket",
+      "color": "#FFCC00",
+      "coverage_pct": 86.04
+    },
+    {
+      "code": "OUTER",
+      "label": "Outer Convection / Cirrus Canopy",
+      "color": "#70A0D0",
+      "coverage_pct": 2.96
+    },
+    {
+      "code": "BAND_MED",
+      "label": "Curved Convective Banding (Medium Gray)",
+      "color": "#5080B0",
+      "coverage_pct": 3.4
+    },
+    {
+      "code": "BAND_LT",
+      "label": "Deep Convective Banding (Light Gray)",
+      "color": "#90C0E0",
+      "coverage_pct": 3.4
+    },
+    {
+      "code": "CDO_DG",
+      "label": "Central Dense Overcast / Eyewall (Dark Gray)",
+      "color": "#304060",
+      "coverage_pct": 2.24
+    },
+    {
+      "code": "RING_BLK",
+      "label": "Intense Convective Ring (Black)",
+      "color": "#101828",
+      "coverage_pct": 1.02
+    },
+    {
+      "code": "TOP_WHT",
+      "label": "Violent Overshooting Tops (White)",
+      "color": "#FFFFFF",
+      "coverage_pct": 0.95
+    },
+    {
+      "code": "CORE_CD",
+      "label": "Extreme Convective Core (Light Gray Cold)",
+      "color": "#E0E0E0",
+      "coverage_pct": 0.0
+    }
+  ]
+}
